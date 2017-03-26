@@ -1,26 +1,222 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bRa-ND-kH4">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main Menu" customClass="ViewController" customModule="Kids_Joy_Center" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back-main" translatesAutoresizingMaskIntoConstraints="NO" id="l1Y-iw-LFB">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-Sf-PJ4">
+                                <rect key="frame" x="110" y="122" width="785" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIY-Gn-hKb" userLabel="memory">
+                                        <rect key="frame" x="8" y="36" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="memory"/>
+                                        <connections>
+                                            <action selector="memoryClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duJ-Pm-g9D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STg-Al-OeU" userLabel="balloon">
+                                        <rect key="frame" x="565" y="36" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="balloon-game-logo3"/>
+                                        <connections>
+                                            <action selector="balloonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZYg-ym-B0j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJe-QA-e32" userLabel="sort">
+                                        <rect key="frame" x="272" y="36" width="240" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="sorting-icon"/>
+                                        <connections>
+                                            <action selector="sortClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GGP-Bt-PTf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2U6-Jn-RiO">
+                                <rect key="frame" x="352" y="436" width="320" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12w-OL-PgW">
+                                        <rect key="frame" x="110" y="14" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Medium" backgroundImage="medium">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mediumClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a77-VV-i6y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-J8-YTz">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Easy" backgroundImage="easy">
+                                            <color key="titleColor" red="0.0" green="0.14106831519999999" blue="0.89595352559999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="easyclicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aOn-U9-06O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9w-NF-XdX">
+                                        <rect key="frame" x="220" y="14" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Hard" backgroundImage="hard">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O4c-KQ-ASk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jA8-1f-Wxz">
+                                <rect key="frame" x="352" y="599" width="320" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTL-Fh-7Pd" userLabel="playButton">
+                                        <rect key="frame" x="21" y="14" width="278" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="PlayButton"/>
+                                        <connections>
+                                            <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPC-oB-n5l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="09B-zN-GSL">
+                        <barButtonItem key="rightBarButtonItem" title="Highest Scores" id="BNg-Qw-WTY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ballonButton" destination="STg-Al-OeU" id="sAj-fW-ox6"/>
+                        <outlet property="easyButton" destination="hLb-J8-YTz" id="0Ac-5T-KuU"/>
+                        <outlet property="hardButton" destination="e9w-NF-XdX" id="hNC-JK-2Fx"/>
+                        <outlet property="mediumButton" destination="12w-OL-PgW" id="eCI-EQ-mWJ"/>
+                        <outlet property="memoryButton" destination="gIY-Gn-hKb" id="c6Z-c5-a96"/>
+                        <outlet property="sortButton" destination="rJe-QA-e32" id="N6H-7v-gpS"/>
+                        <segue destination="G60-AW-ZGd" kind="show" identifier="memory" id="cJI-hj-Ri2"/>
+                        <segue destination="8nf-he-oOP" kind="show" identifier="sort" id="ffa-xO-A5B"/>
+                        <segue destination="oBr-d5-56T" kind="show" identifier="balloon" id="KHh-Pr-Nds"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="758.203125" y="38.28125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Iks-ai-uiC">
+            <objects>
+                <viewController id="8nf-he-oOP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iyH-ku-4EO"/>
+                        <viewControllerLayoutGuide type="bottom" id="zKv-Bi-n2i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O7c-Yx-ok6" userLabel="sort">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OPi-Lf-Wef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="1359"/>
+        </scene>
+        <!--memoryGame-->
+        <scene sceneID="gcu-gN-7YU">
+            <objects>
+                <viewController id="G60-AW-ZGd" userLabel="memoryGame" customClass="memoryGameViewController" customModule="Kids_Joy_Center" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lSb-pQ-vBC"/>
+                        <viewControllerLayoutGuide type="bottom" id="f1P-tX-B46"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2GW-dR-tBq">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="mgg-ha-gfo" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithSegue:" id="vQb-Py-fcq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHi-pp-lbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mgg-ha-gfo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-79"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OYB-7A-xdQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bRa-ND-kH4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nUf-vo-Mb9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bx3-CV-JTU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Moo-f4-UYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168.1640625" y="685.9375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NjG-WM-U1m">
+            <objects>
+                <viewController id="oBr-d5-56T" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fzL-nF-d1q"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEM-Oe-H3b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m1d-Nd-aDw">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3J-Hz-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="1507"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PlayButton" width="224" height="100"/>
+        <image name="back-main" width="1024" height="600"/>
+        <image name="balloon-game-logo3" width="300" height="300"/>
+        <image name="easy" width="516" height="516"/>
+        <image name="hard" width="250" height="250"/>
+        <image name="medium" width="300" height="300"/>
+        <image name="memory" width="512" height="512"/>
+        <image name="sorting-icon" width="400" height="300"/>
+    </resources>
 </document>
