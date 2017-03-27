@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="758.203125" y="38.28125"/>
         </scene>
-        <!--View Controller-->
+        <!--Sort Game View Controller-->
         <scene sceneID="Iks-ai-uiC">
             <objects>
-                <viewController id="8nf-he-oOP" sceneMemberID="viewController">
+                <viewController id="8nf-he-oOP" customClass="sortGameViewController" customModule="Kids_Joy_Center" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iyH-ku-4EO"/>
                         <viewControllerLayoutGuide type="bottom" id="zKv-Bi-n2i"/>
@@ -145,8 +145,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="Fcw-yp-Kag" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithSegue:" id="vGm-7m-uF6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPi-Lf-Wef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fcw-yp-Kag" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1192" y="1359"/>
         </scene>

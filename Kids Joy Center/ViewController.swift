@@ -118,14 +118,10 @@ class ViewController: UIViewController {
         }
         else if segue.identifier == "sort" {
             if let dvc = segue.destination as? sortGameViewController {
-                /*
-                dvc.game = selectedGame
                 dvc.difficulty = selectedDifficulty
-                print("entered")
- */
             }
         }
-        else if segue.identifier == "sort" {
+        else if segue.identifier == "balloon" {
             if let dvc = segue.destination as? balloonGameViewController {
                 /*
                  dvc.game = selectedGame

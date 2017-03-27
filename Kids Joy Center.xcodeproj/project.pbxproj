@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		682097B91E886B0700EF2807 /* sortGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682097B81E886B0700EF2807 /* sortGameModel.swift */; };
+		682097BB1E8873FD00EF2807 /* sortGameObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682097BA1E8873FD00EF2807 /* sortGameObjects.swift */; };
 		683176021E82158A001EDF88 /* memoryGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683176011E82158A001EDF88 /* memoryGameCell.swift */; };
 		683176081E82C621001EDF88 /* sortGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683176071E82C621001EDF88 /* sortGameViewController.swift */; };
 		6831760A1E82C66A001EDF88 /* balloonGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683176091E82C66A001EDF88 /* balloonGameViewController.swift */; };
@@ -14,6 +16,9 @@
 		6831760E1E87170D001EDF88 /* cheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6831760D1E87170D001EDF88 /* cheer.mp3 */; };
 		683176101E8807CD001EDF88 /* sortGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6831760F1E8807CD001EDF88 /* sortGameView.swift */; };
 		683176161E8862BF001EDF88 /* memoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683176151E8862BF001EDF88 /* memoryGameViewController.swift */; };
+		6844C9261E88CD7F00D6EC0D /* balloonGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9251E88CD7F00D6EC0D /* balloonGameView.swift */; };
+		6844C9281E88CDD900D6EC0D /* balloonGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9271E88CDD900D6EC0D /* balloonGameModel.swift */; };
+		6844C92A1E88CFCF00D6EC0D /* oneBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9291E88CFCF00D6EC0D /* oneBalloon.swift */; };
 		68A7991C1E80355F002D05F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7991B1E80355F002D05F5 /* AppDelegate.swift */; };
 		68A7991E1E80355F002D05F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7991D1E80355F002D05F5 /* ViewController.swift */; };
 		68A799211E80355F002D05F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A7991F1E80355F002D05F5 /* Main.storyboard */; };
@@ -23,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		682097B81E886B0700EF2807 /* sortGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortGameModel.swift; sourceTree = "<group>"; };
+		682097BA1E8873FD00EF2807 /* sortGameObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortGameObjects.swift; sourceTree = "<group>"; };
 		683176011E82158A001EDF88 /* memoryGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoryGameCell.swift; sourceTree = "<group>"; };
 		683176071E82C621001EDF88 /* sortGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortGameViewController.swift; sourceTree = "<group>"; };
 		683176091E82C66A001EDF88 /* balloonGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = balloonGameViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +37,9 @@
 		6831760D1E87170D001EDF88 /* cheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cheer.mp3; path = ../cheer.mp3; sourceTree = "<group>"; };
 		6831760F1E8807CD001EDF88 /* sortGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortGameView.swift; sourceTree = "<group>"; };
 		683176151E8862BF001EDF88 /* memoryGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = memoryGameViewController.swift; path = ../memoryGameViewController.swift; sourceTree = "<group>"; };
+		6844C9251E88CD7F00D6EC0D /* balloonGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = balloonGameView.swift; sourceTree = "<group>"; };
+		6844C9271E88CDD900D6EC0D /* balloonGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = balloonGameModel.swift; sourceTree = "<group>"; };
+		6844C9291E88CFCF00D6EC0D /* oneBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneBalloon.swift; sourceTree = "<group>"; };
 		68A799181E80355F002D05F5 /* Kids Joy Center.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kids Joy Center.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A7991B1E80355F002D05F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A7991D1E80355F002D05F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +95,11 @@
 		68A7992F1E817FB2002D05F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				682097BA1E8873FD00EF2807 /* sortGameObjects.swift */,
 				6831760B1E82C9BD001EDF88 /* memoryGameModel.swift */,
+				682097B81E886B0700EF2807 /* sortGameModel.swift */,
+				6844C9271E88CDD900D6EC0D /* balloonGameModel.swift */,
+				6844C9291E88CFCF00D6EC0D /* oneBalloon.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -96,6 +110,7 @@
 				68A799321E818003002D05F5 /* memoryGameView.swift */,
 				6831760F1E8807CD001EDF88 /* sortGameView.swift */,
 				683176011E82158A001EDF88 /* memoryGameCell.swift */,
+				6844C9251E88CD7F00D6EC0D /* balloonGameView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,11 +205,16 @@
 				683176161E8862BF001EDF88 /* memoryGameViewController.swift in Sources */,
 				683176081E82C621001EDF88 /* sortGameViewController.swift in Sources */,
 				683176021E82158A001EDF88 /* memoryGameCell.swift in Sources */,
+				6844C9261E88CD7F00D6EC0D /* balloonGameView.swift in Sources */,
 				68A7991E1E80355F002D05F5 /* ViewController.swift in Sources */,
+				6844C92A1E88CFCF00D6EC0D /* oneBalloon.swift in Sources */,
 				6831760A1E82C66A001EDF88 /* balloonGameViewController.swift in Sources */,
 				6831760C1E82C9BD001EDF88 /* memoryGameModel.swift in Sources */,
+				682097B91E886B0700EF2807 /* sortGameModel.swift in Sources */,
 				68A799331E818003002D05F5 /* memoryGameView.swift in Sources */,
 				68A7991C1E80355F002D05F5 /* AppDelegate.swift in Sources */,
+				682097BB1E8873FD00EF2807 /* sortGameObjects.swift in Sources */,
+				6844C9281E88CDD900D6EC0D /* balloonGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
