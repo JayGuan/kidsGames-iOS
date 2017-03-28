@@ -23,12 +23,14 @@ class balloonGameView: UIView {
         background = UIImageView(frame: CGRect.zero)
         background.image = UIImage(named: "sky-background")
         background.frame = CGRect(x:0,y:0,width:1024, height: 768)
+        background.isUserInteractionEnabled = false
         self.addSubview(background)
         
         // add timer
         time = UIImageView(frame: CGRect.zero)
         time.image = UIImage(named: "time")
         time.frame = CGRect(x:0,y:75, width:140, height: 40)
+        time.isUserInteractionEnabled = false
         self.addSubview(time)
         
         //add time labels
@@ -36,6 +38,7 @@ class balloonGameView: UIView {
         timeLabel.frame = CGRect(x:140,y:75, width:140, height: 40)
         timeLabel.font = timeLabel.font.withSize(25)
         timeLabel.backgroundColor = UIColor.lightGray
+        timeLabel.isUserInteractionEnabled = false
         self.addSubview(timeLabel)
         
         
@@ -43,6 +46,7 @@ class balloonGameView: UIView {
         score = UIImageView(frame: CGRect.zero)
         score.image = UIImage(named: "score")
         score.frame = CGRect(x:750,y:75, width:160, height: 40)
+        score.isUserInteractionEnabled = false
         self.addSubview(score)
         
         // score numbers
@@ -52,6 +56,7 @@ class balloonGameView: UIView {
         scoreLabel.font = scoreLabel.font.withSize(25)
         scoreLabel.backgroundColor = UIColor.lightGray
         scoreLabel.text = "0"
+        scoreLabel.isUserInteractionEnabled = false
         self.addSubview(scoreLabel)
     }
 

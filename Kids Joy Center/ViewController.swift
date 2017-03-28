@@ -123,11 +123,9 @@ class ViewController: UIViewController {
         }
         else if segue.identifier == "balloon" {
             if let dvc = segue.destination as? balloonGameViewController {
-                /*
-                 dvc.game = selectedGame
                  dvc.difficulty = selectedDifficulty
                  print("entered")
-                 */
+                
             }
         }
     }

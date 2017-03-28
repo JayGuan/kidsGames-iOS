@@ -194,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="-168.1640625" y="685.9375"/>
         </scene>
-        <!--View Controller-->
+        <!--Balloon Game View Controller-->
         <scene sceneID="NjG-WM-U1m">
             <objects>
-                <viewController id="oBr-d5-56T" sceneMemberID="viewController">
+                <viewController id="oBr-d5-56T" customClass="balloonGameViewController" customModule="Kids_Joy_Center" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fzL-nF-d1q"/>
                         <viewControllerLayoutGuide type="bottom" id="DEM-Oe-H3b"/>
@@ -207,8 +207,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="ueL-vb-00g" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithSegue:" id="cai-dO-fYS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3J-Hz-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ueL-vb-00g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="279" y="1507"/>
         </scene>
