@@ -73,8 +73,8 @@ class balloonGameViewController: UIViewController {
         print("gate \(svInfo.2), ballon Num \(svInfo.0), number \(svInfo.1)")
         let fr = CGRect(x: CGFloat(x), y: CGFloat(y), width: CGFloat(w), height: CGFloat(h))
         let view = UIView(frame: fr)
-        let balloon = UIImageView(frame: CGRect.zero)
-        let number = UIImageView(frame: CGRect.zero)
+        let balloon = UIImageView(frame: fr)
+        let number = UIImageView(frame: fr)
         var imgName = "color\(svInfo.0)"
         var numberName = ""
         
@@ -99,14 +99,16 @@ class balloonGameViewController: UIViewController {
             numberName = "cartoon-number-\(svInfo.1)"
         }
         balloon.image = UIImage(named: imgName)
-        balloon.frame = fr
+        //balloon.frame = fr
         number.image = UIImage(named: numberName)
-        number.frame = CGRect(x: CGFloat(x+imgSize/2), y: CGFloat(y+imgSize/2), width: CGFloat(w/2), height: CGFloat(h/2))
-        number.center = view.center
+        //number.frame = CGRect(x: CGFloat(x+imgSize/2), y: CGFloat(y+imgSize/2), width: CGFloat(w/2), height: CGFloat(h/2))
+        //number.center = view.center
         number.tag = svInfo.1
         
         view.addSubview(balloon)
         view.addSubview(number)
+        view.subviews[0].center = view.center
+        view.subviews[1].center = view.center
         view.backgroundColor = UIColor.red
         self.view.addSubview(view)
         animateView(v:view, multiplier:speed)
