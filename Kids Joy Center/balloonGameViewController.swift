@@ -64,6 +64,7 @@ class balloonGameViewController: UIViewController {
     }
     
     func addSV(speed:Int){
+        /*
         // 1024 total screen size,
         var svInfo = random()
         let w = imgSize
@@ -99,19 +100,72 @@ class balloonGameViewController: UIViewController {
             numberName = "cartoon-number-\(svInfo.1)"
         }
         balloon.image = UIImage(named: imgName)
-        //balloon.frame = fr
+        balloon.frame = fr
         number.image = UIImage(named: numberName)
-        //number.frame = CGRect(x: CGFloat(x+imgSize/2), y: CGFloat(y+imgSize/2), width: CGFloat(w/2), height: CGFloat(h/2))
+        number.frame = CGRect(x: CGFloat(x+imgSize/2), y: CGFloat(y+imgSize/2), width: CGFloat(w/2), height: CGFloat(h/2))
         //number.center = view.center
         number.tag = svInfo.1
         
+        //view.addSubview(balloon)
+        //view.addSubview(number)
+        //view.subviews[0].center = view.center
+        //view.subviews[1].center = view.center
+        //view.backgroundColor = UIColor.red
+        self.view.addSubview(view)
+        //animateView(v:balloon, multiplier:speed)
+        animateView(v:number, multiplier:speed)
+ */
+        // 1024 total screen size,
+        var svInfo = random()
+        let w = imgSize
+        let h = imgSize
+        let y = 680
+        let x = gates[svInfo.2]
+        let fr = CGRect(x: CGFloat(x), y: CGFloat(y), width: CGFloat(w), height: CGFloat(h))
+        var imgName = "color\(svInfo.0)"
+        var numberName = ""
+        let view = UIView(frame: fr)
+        let balloon = UIImageView(frame: CGRect.zero)
+        let number = UIImageView(frame: CGRect.zero)
+        
+        
+        if svInfo.0 == 11 {
+            //11 as star
+            imgName = "star"
+            number.tag = 2
+            balloon.tag = 2
+            view.tag = 2
+        }
+        else if svInfo.0 == 12 {
+            //12 as skull
+            imgName = "skull"
+            number.tag = 3
+            balloon.tag = 3
+            view.tag = 3
+        }
+        else {
+            number.tag = 1
+            balloon.tag = 1
+            view.tag = 1
+            numberName = "cartoon-number-\(svInfo.1)"
+        }
+        
+        balloon.image = UIImage(named: imgName)
+        balloon.center = view.center
+        number.image = UIImage(named: numberName)
+        number.center = view.center
+        number.frame = CGRect(x:0,y:0,width:h, height: h)
+        number.tag = svInfo.1
+        print("tag \(number.tag)")
+        balloon.frame = CGRect(x:0,y:0,width:h, height: h)
+        view.tag = 1
+
         view.addSubview(balloon)
         view.addSubview(number)
-        view.subviews[0].center = view.center
-        view.subviews[1].center = view.center
-        view.backgroundColor = UIColor.red
+        
         self.view.addSubview(view)
-        animateView(v:view, multiplier:speed)
+        
+        animateView(v:view, multiplier:1)
     }
     
     //returns img name, number name, location index
@@ -168,8 +222,6 @@ class balloonGameViewController: UIViewController {
         }
         UIView.animate(withDuration: TimeInterval(speed), delay: 0, options: .allowUserInteraction, animations: {
             v.frame.origin.y = 0
-            v.subviews[0].frame.origin.y = 0
-            v.subviews[1].frame.origin.y = 0
         }, completion: {_ in v.removeFromSuperview() })
     }
     
