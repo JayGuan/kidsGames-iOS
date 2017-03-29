@@ -90,13 +90,123 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kids Joy Center/balloonGameViewController.swift"
-            timestampString = "512440711.744238"
+            timestampString = "512443947.051635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kids Joy Center/HighScores.swift"
+            timestampString = "512449291.814753"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kids Joy Center/score.swift"
+            timestampString = "512445575.695455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kids Joy Center/ViewController.swift"
+            timestampString = "512446813.381975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kids_Joy_Center.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Kids_Joy_Center.ViewController"
+                  moduleName = "Kids Joy Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jayguan/Desktop/OneDrive/iOS/Assignment3/Kids%20Joy%20Center/Kids%20Joy%20Center/ViewController.swift"
+                  timestampString = "512447343.33048"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kids_Joy_Center.ViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Kids_Joy_Center.ViewController"
+                  moduleName = "Kids Joy Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jayguan/Desktop/OneDrive/iOS/Assignment3/Kids%20Joy%20Center/Kids%20Joy%20Center/ViewController.swift"
+                  timestampString = "512447343.332738"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kids_Joy_Center.ViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Kids_Joy_Center.ViewController&gt;"
+                  moduleName = "Kids Joy Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jayguan/Desktop/OneDrive/iOS/Assignment3/Kids%20Joy%20Center/Kids%20Joy%20Center/ViewController.swift"
+                  timestampString = "512447343.335019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kids_Joy_Center.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Kids_Joy_Center.ViewController&gt;"
+                  moduleName = "Kids Joy Center"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jayguan/Desktop/OneDrive/iOS/Assignment3/Kids%20Joy%20Center/Kids%20Joy%20Center/ViewController.swift"
+                  timestampString = "512447343.337751"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

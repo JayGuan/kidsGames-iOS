@@ -30,7 +30,7 @@ class balloonGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let audioPath = Bundle.main.path(forResource: "cheer", ofType: "mp3")
+        let audioPath = Bundle.main.path(forResource: "popingSound", ofType: "wav")
         
         do{
             cheerPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
@@ -38,6 +38,7 @@ class balloonGameViewController: UIViewController {
         catch{
             
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,6 +175,7 @@ class balloonGameViewController: UIViewController {
                     self.view.subviews[i-1].removeFromSuperview()
                     notRemoved = false
                     updateScore()
+                    cheerPlayer.play()
                 }
             }
             i+=1
@@ -307,8 +309,23 @@ class balloonGameViewController: UIViewController {
     
     func won() {
         let newScore = score(order:0, gameType: "Bursting Balloon", level:"\(difficulty)", score:scoreNum)
+        print("debug: scoreNum \(scoreNum)")
         highScores.updateScore(newScore: newScore)
-        
+        //save data
+        var userDefaults = UserDefaults.standard
+        var i = 0
+        print(highScores.top5.count)
+        for each in highScores.top5 {
+            userDefaults.set(each.gameType, forKey:"gameType\(i)")
+            userDefaults.set(each.level, forKey:"level\(i)")
+            userDefaults.set(each.order, forKey:"order\(i)")
+            userDefaults.set(each.score, forKey:"score\(i)")
+            i+=1
+            print("encode score:\(each.score)")
+        }
+        userDefaults.set(highScores.top5.count, forKey:"count")
+        userDefaults.set("testData2", forKey:"2")
+        userDefaults.synchronize()
         let alert = UIAlertController(title: "Times Up", message: "Do you want to play again?", preferredStyle: .alert)
         
         let no = UIAlertAction(title: "No", style: .default, handler:

@@ -22,23 +22,71 @@ class ViewController: UIViewController {
     // 3 levels: easy, medium, hard
     var selectedDifficulty = ""
     var highScores = HighScores()
+    var x = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var userDefaults = UserDefaults.standard
+        /*
+        if let decoded  = userDefaults.object(forKey: "highScores") as? Data
+        {
+            let decodedData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! HighScores
+            highScores = decodedData
+            print("decoded")
+        }
+        */
+        
+        /*
         for i in 0...4 {
             let newScore = score.init(order: 0, gameType: "Sorting", level: "Difficult", score: i)
             highScores.top5.append(newScore)
         }
+ */
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if let x = UserDefaults.standard.object(forKey: "2") as? String
+        {
+            print(x)
+        }
+        
+        if let count = UserDefaults.standard.object(forKey: "count") as? Int
+        {
+            highScores = HighScores()
+            for i in 0..<count {
+                let newScore = score.init(order: UserDefaults.standard.object(forKey: "order\(i)") as! Int,
+                                      gameType: UserDefaults.standard.object(forKey: "gameType\(i)") as! String,
+                                      level: UserDefaults.standard.object(forKey: "level\(i)") as! String,
+                                      score: UserDefaults.standard.object(forKey: "score\(i)") as! Int)
+                highScores.top5.append(newScore)
+            }
+        }
+        
+        
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        /*
+        let userDefaults = UserDefaults.standard
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: highScores)
+        userDefaults.set(encodedData, forKey: "highScores")
+        userDefaults.synchronize()
+ */
+        UserDefaults.standard.set("test", forKey: "test2")
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func highScoreClicked(_ sender: UIBarButtonItem) {
-        
+        //test
+
             print("adding pop up")
             /*
             let newVC = UIViewController()
