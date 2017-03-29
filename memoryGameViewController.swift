@@ -29,6 +29,7 @@ class memoryGameViewController: UIViewController, UICollectionViewDataSource, UI
     var timer: Timer?
     var lastFound = 0
     var timeCount = 0
+    var highScores = HighScores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,6 +206,9 @@ class memoryGameViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func won() {
+        let newScore = score(order:0, gameType: "Memory", level:"\(difficulty)", score:scoreNum)
+        highScores.updateScore(newScore: newScore)
+        
         let alert = UIAlertController(title: "You Won", message: "Do you want to play again?", preferredStyle: .alert)
         
         let no = UIAlertAction(title: "No", style: .default, handler:
@@ -330,6 +334,7 @@ class memoryGameViewController: UIViewController, UICollectionViewDataSource, UI
         if segue.identifier == "unwindToMenu" {
             if let dvc = segue.destination as? ViewController {
                 print("back to home, TODO pass score")
+                dvc.highScores = self.highScores
             }
         }
     }

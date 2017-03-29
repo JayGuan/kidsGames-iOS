@@ -19,6 +19,9 @@
 		6844C9261E88CD7F00D6EC0D /* balloonGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9251E88CD7F00D6EC0D /* balloonGameView.swift */; };
 		6844C9281E88CDD900D6EC0D /* balloonGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9271E88CDD900D6EC0D /* balloonGameModel.swift */; };
 		6844C92A1E88CFCF00D6EC0D /* oneBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C9291E88CFCF00D6EC0D /* oneBalloon.swift */; };
+		6844C92C1E8B343F00D6EC0D /* score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C92B1E8B343F00D6EC0D /* score.swift */; };
+		6844C92E1E8B353100D6EC0D /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C92D1E8B353100D6EC0D /* HighScores.swift */; };
+		6844C9301E8B3CAE00D6EC0D /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844C92F1E8B3CAE00D6EC0D /* PopUpViewController.swift */; };
 		68A7991C1E80355F002D05F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7991B1E80355F002D05F5 /* AppDelegate.swift */; };
 		68A7991E1E80355F002D05F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7991D1E80355F002D05F5 /* ViewController.swift */; };
 		68A799211E80355F002D05F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A7991F1E80355F002D05F5 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		6844C9251E88CD7F00D6EC0D /* balloonGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = balloonGameView.swift; sourceTree = "<group>"; };
 		6844C9271E88CDD900D6EC0D /* balloonGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = balloonGameModel.swift; sourceTree = "<group>"; };
 		6844C9291E88CFCF00D6EC0D /* oneBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneBalloon.swift; sourceTree = "<group>"; };
+		6844C92B1E8B343F00D6EC0D /* score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = score.swift; sourceTree = "<group>"; };
+		6844C92D1E8B353100D6EC0D /* HighScores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
+		6844C92F1E8B3CAE00D6EC0D /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		68A799181E80355F002D05F5 /* Kids Joy Center.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kids Joy Center.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A7991B1E80355F002D05F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A7991D1E80355F002D05F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 		68A7992F1E817FB2002D05F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6844C92B1E8B343F00D6EC0D /* score.swift */,
+				6844C92D1E8B353100D6EC0D /* HighScores.swift */,
 				682097BA1E8873FD00EF2807 /* sortGameObjects.swift */,
 				6831760B1E82C9BD001EDF88 /* memoryGameModel.swift */,
 				682097B81E886B0700EF2807 /* sortGameModel.swift */,
@@ -123,6 +131,7 @@
 				68A7991D1E80355F002D05F5 /* ViewController.swift */,
 				683176091E82C66A001EDF88 /* balloonGameViewController.swift */,
 				683176071E82C621001EDF88 /* sortGameViewController.swift */,
+				6844C92F1E8B3CAE00D6EC0D /* PopUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -211,10 +220,13 @@
 				6831760A1E82C66A001EDF88 /* balloonGameViewController.swift in Sources */,
 				6831760C1E82C9BD001EDF88 /* memoryGameModel.swift in Sources */,
 				682097B91E886B0700EF2807 /* sortGameModel.swift in Sources */,
+				6844C9301E8B3CAE00D6EC0D /* PopUpViewController.swift in Sources */,
+				6844C92E1E8B353100D6EC0D /* HighScores.swift in Sources */,
 				68A799331E818003002D05F5 /* memoryGameView.swift in Sources */,
 				68A7991C1E80355F002D05F5 /* AppDelegate.swift in Sources */,
 				682097BB1E8873FD00EF2807 /* sortGameObjects.swift in Sources */,
 				6844C9281E88CDD900D6EC0D /* balloonGameModel.swift in Sources */,
+				6844C92C1E8B343F00D6EC0D /* score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

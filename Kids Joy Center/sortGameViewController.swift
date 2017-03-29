@@ -24,6 +24,7 @@ class sortGameViewController: UIViewController {
     var topImgs = [sortGameObjects]()
     var beginTouchLocation: CGPoint?
     var matchCount = 0
+    var highScores = HighScores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -222,6 +223,8 @@ class sortGameViewController: UIViewController {
     }
     
     func won() {
+        let newScore = score(order:0, gameType: "Sorting", level:"\(difficulty)", score:scoreNum)
+        highScores.updateScore(newScore: newScore)
         let alert = UIAlertController(title: "You Won", message: "Do you want to play again?", preferredStyle: .alert)
         
         let no = UIAlertAction(title: "No", style: .default, handler:
@@ -270,6 +273,16 @@ class sortGameViewController: UIViewController {
         superView.cleanUp()
         for view in self.view.subviews {
             view.removeFromSuperview()
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //unwind
+        // parepare for next scene
+        if segue.identifier == "unwindToMenu" {
+            if let dvc = segue.destination as? ViewController {
+                print("back to home, TODO pass score")
+                dvc.highScores = self.highScores
+            }
         }
     }
 }

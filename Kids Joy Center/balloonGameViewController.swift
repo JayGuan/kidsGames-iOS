@@ -23,7 +23,10 @@ class balloonGameViewController: UIViewController {
     var imgSize = 80
     var imgNum = 10
     var slowCountDown = 0
-    
+    var speed = 1.0
+    var bonusTimer = 0
+    var skullTimer = 0
+    var highScores = HighScores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,58 +66,7 @@ class balloonGameViewController: UIViewController {
         }
     }
     
-    func addSV(speed:Int){
-        /*
-        // 1024 total screen size,
-        var svInfo = random()
-        let w = imgSize
-        let h = imgSize
-        let y = 680
-        let x = gates[svInfo.2]
-        print("gate \(svInfo.2), ballon Num \(svInfo.0), number \(svInfo.1)")
-        let fr = CGRect(x: CGFloat(x), y: CGFloat(y), width: CGFloat(w), height: CGFloat(h))
-        let view = UIView(frame: fr)
-        let balloon = UIImageView(frame: fr)
-        let number = UIImageView(frame: fr)
-        var imgName = "color\(svInfo.0)"
-        var numberName = ""
-        
-        if svInfo.0 == 11 {
-            //11 as star
-            imgName = "star"
-            number.tag = 2
-            balloon.tag = 2
-            view.tag = 2
-        }
-        else if svInfo.0 == 12 {
-            //12 as skull
-            imgName = "skull"
-            number.tag = 3
-            balloon.tag = 3
-            view.tag = 3
-        }
-        else {
-            number.tag = 1
-            balloon.tag = 1
-            view.tag = 1
-            numberName = "cartoon-number-\(svInfo.1)"
-        }
-        balloon.image = UIImage(named: imgName)
-        balloon.frame = fr
-        number.image = UIImage(named: numberName)
-        number.frame = CGRect(x: CGFloat(x+imgSize/2), y: CGFloat(y+imgSize/2), width: CGFloat(w/2), height: CGFloat(h/2))
-        //number.center = view.center
-        number.tag = svInfo.1
-        
-        //view.addSubview(balloon)
-        //view.addSubview(number)
-        //view.subviews[0].center = view.center
-        //view.subviews[1].center = view.center
-        //view.backgroundColor = UIColor.red
-        self.view.addSubview(view)
-        //animateView(v:balloon, multiplier:speed)
-        animateView(v:number, multiplier:speed)
- */
+    func addSV(){
         // 1024 total screen size,
         var svInfo = random()
         let w = imgSize
@@ -130,22 +82,23 @@ class balloonGameViewController: UIViewController {
         
         
         if svInfo.0 == 11 {
-            //11 as star
-            imgName = "star"
-            number.tag = 2
-            balloon.tag = 2
-            view.tag = 2
+                //11 as star
+                number.tag = 0
+                balloon.tag = 1
+                imgName = "star"
+                view.tag = 2
+                bonusTimer = 0
         }
         else if svInfo.0 == 12 {
-            //12 as skull
-            imgName = "skull"
-            number.tag = 3
-            balloon.tag = 3
-            view.tag = 3
+                //12 as skull
+                balloon.tag = 2
+                number.tag = 0
+                imgName = "skull"
+                view.tag = 3
+                skullTimer = 0
         }
         else {
-            number.tag = 1
-            balloon.tag = 1
+            number.tag = svInfo.1
             view.tag = 1
             numberName = "cartoon-number-\(svInfo.1)"
         }
@@ -155,24 +108,38 @@ class balloonGameViewController: UIViewController {
         number.image = UIImage(named: numberName)
         number.center = view.center
         number.frame = CGRect(x:0,y:0,width:h, height: h)
-        number.tag = svInfo.1
         print("tag \(number.tag)")
         balloon.frame = CGRect(x:0,y:0,width:h, height: h)
-        view.tag = 1
 
         view.addSubview(balloon)
         view.addSubview(number)
         
         self.view.addSubview(view)
         
-        animateView(v:view, multiplier:1)
+        if imgName == "star" {
+            animateView(v:view, multiplier:speed*0.75)
+        }
+        else if imgName == "skull" {
+            animateView(v:view, multiplier:speed*2)
+        }
+        else {
+            animateView(v:view, multiplier:speed)
+        }
     }
     
     //returns img name, number name, location index
     func random()-> (Int,Int,Int){
         let location = Int(arc4random_uniform(10))
         let imgName = Int(arc4random_uniform(12))+1
-        let numberName = Int(arc4random_uniform(10))
+        var numberName = 9
+        switch difficulty {
+        case "hard":
+          numberName  = Int(arc4random_uniform(5))+1
+        case "medium":
+            numberName  = Int(arc4random_uniform(7))+1
+        default:
+            numberName  = Int(arc4random_uniform(9))+1
+        }
         return (imgName, numberName, location)
     }
     
@@ -186,19 +153,23 @@ class balloonGameViewController: UIViewController {
         while notRemoved && i < self.view.subviews.count {
             if self.view.subviews[i-1].layer.presentation()!.hitTest(touchLocation) != nil {
                 if self.view.subviews[i-1].tag == 2 {
-                    print("start clicked")
+                    print("star clicked")
                     self.view.subviews[i-1].removeFromSuperview()
                     notRemoved = false
                     slowCountDown = 5
+                    speed = 4
+                    lastFound = 0
+                    //slow down all existing balloons
                 }
                 else if self.view.subviews[i-1].tag == 3 {
                     print("skull ckicked")
                     self.view.subviews[i-1].removeFromSuperview()
                     notRemoved = false
                     stop()
-                    lost()
+                    won()
                 }
                 else if self.view.subviews[i-1].tag == 1 {
+                    lastFound = 0
                     scoreNum += self.view.subviews[i-1].subviews[1].tag
                     self.view.subviews[i-1].removeFromSuperview()
                     notRemoved = false
@@ -209,9 +180,9 @@ class balloonGameViewController: UIViewController {
         }
     }
     
-    func animateView(v: UIView, multiplier:Int){
+    func animateView(v: UIView, multiplier:Double){
         print("animate called")
-        var speed = v.frame.origin.y/100 * CGFloat(multiplier)
+        var speed = v.frame.origin.y/200 * CGFloat(multiplier)
         switch difficulty {
         case "easy":
             speed = speed*2
@@ -240,22 +211,63 @@ class balloonGameViewController: UIViewController {
     
     func updateTime() {
         if slowCountDown > 0 {
-            addSV(speed:2)
+            print("slowed")
+            addSV()
+            if difficulty == "medium" {
+                let rand = Int(arc4random_uniform(2))
+                if rand == 1 {
+                    addSV()
+                }
+            }
+            else if difficulty == "hard" {
+                let rand = Int(arc4random_uniform(3))
+                if rand == 1 {
+                    addSV()
+                }
+                else if rand == 2 {
+                    addSV()
+                    addSV()
+                }
+            }
             slowCountDown -= 1
         }
         else {
-            addSV(speed:1)
+            addSV()
+            if difficulty == "medium" {
+                let rand = Int(arc4random_uniform(2))
+                if rand == 1 {
+                    addSV()
+                }
+            }
+            else if difficulty == "hard" {
+                let rand = Int(arc4random_uniform(3))
+                if rand == 1 {
+                    addSV()
+                }
+                else if rand == 2 {
+                    addSV()
+                    addSV()
+                }
+            }
         }
         timeCount-=1
         lastFound+=1
-        //update frame
-        let minutes = getMinutes(seconds: timeCount)
-        let seconds = getSeconds(seconds: timeCount)
-        print("Minutes: \(minutes) Seconds: \(seconds)")
-        superView.timeLabel.text = "\(minutes):\(seconds)"
-        if (minutes == 0 && seconds == 0) {
+        bonusTimer+=1
+        skullTimer+=1
+        if lastFound == 10 {
             stop()
             lost()
+        }
+        else {
+            //update frame
+            let minutes = getMinutes(seconds: timeCount)
+            let seconds = getSeconds(seconds: timeCount)
+            print("Minutes: \(minutes) Seconds: \(seconds)")
+            superView.timeLabel.text = "\(minutes):\(seconds)"
+            if (minutes == 0 && seconds == 0) {
+                stop()
+                won()
+            }
         }
     }
     
@@ -274,7 +286,7 @@ class balloonGameViewController: UIViewController {
     }
     
     func lost() {
-        let alert = UIAlertController(title: "You Lost", message: "Do you want to play again?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "You lost the game", message: "Do you want to play again?", preferredStyle: .alert)
         
         let no = UIAlertAction(title: "No", style: .default, handler:
             {
@@ -294,7 +306,10 @@ class balloonGameViewController: UIViewController {
     }
     
     func won() {
-        let alert = UIAlertController(title: "You Won", message: "Do you want to play again?", preferredStyle: .alert)
+        let newScore = score(order:0, gameType: "Bursting Balloon", level:"\(difficulty)", score:scoreNum)
+        highScores.updateScore(newScore: newScore)
+        
+        let alert = UIAlertController(title: "Times Up", message: "Do you want to play again?", preferredStyle: .alert)
         
         let no = UIAlertAction(title: "No", style: .default, handler:
             {
@@ -341,5 +356,16 @@ class balloonGameViewController: UIViewController {
     func backAction() {
         stop()
         performSegue(withIdentifier: "unwindToMenu", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //unwind
+        // parepare for next scene
+        if segue.identifier == "unwindToMenu" {
+            if let dvc = segue.destination as? ViewController {
+                print("back to home, TODO pass score")
+                dvc.highScores = self.highScores
+            }
+        }
     }
 }

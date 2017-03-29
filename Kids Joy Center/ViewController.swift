@@ -21,10 +21,14 @@ class ViewController: UIViewController {
     var selectedGame = ""
     // 3 levels: easy, medium, hard
     var selectedDifficulty = ""
-    
+    var highScores = HighScores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in 0...4 {
+            let newScore = score.init(order: 0, gameType: "Sorting", level: "Difficult", score: i)
+            highScores.top5.append(newScore)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,6 +36,66 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func highScoreClicked(_ sender: UIBarButtonItem) {
+        
+            print("adding pop up")
+            /*
+            let newVC = UIViewController()
+            newVC.view.backgroundColor = UIColor.white
+            
+            newVC.modalPresentationStyle = .popover
+            newVC.modalTransitionStyle = .coverVertical
+            
+            newVC.preferredContentSize = CGSize(width: 300, height: 300)
+            */
+        let newVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "popUpID") as! PopUpViewController
+        newVC.view.backgroundColor = UIColor.blue
+        newVC.view.center = self.view.center
+        self.addChildViewController(newVC)
+        let fr = CGRect(x: 150, y: 100, width: 724, height: 500)
+        newVC.view.frame = fr
+        var i = 0
+        for _ in highScores.top5 {
+            let score = highScores.top5[i]
+            let labelText = "\(i+1) \(score.gameType) \(score.level) \(score.score)"
+            i+=1
+            switch i {
+            case 0:
+                newVC.label1.text = labelText
+            case 1:
+                newVC.label2.text = labelText
+            case 2:
+                newVC.label3.text = labelText
+            case 3:
+                newVC.label4.text = labelText
+            case 4:
+                newVC.label5.text = labelText
+            default:
+                newVC.label1.text = labelText
+            }
+        }
+        self.view.addSubview(newVC.view)
+        newVC.didMove(toParentViewController: self)
+        /*
+            let fr = CGRect(x: 300, y: 300, width: 300, height: 200)
+            let midView = UIView(frame: fr)
+            //add time labels
+            var label = UILabel(frame: CGRect.zero)
+            label.frame = CGRect(x:0,y:100, width:300, height: 40)
+            label.font = label.font.withSize(25)
+            label.backgroundColor = UIColor.lightGray
+            label.isUserInteractionEnabled = false
+            midView.addSubview(label)
+            midView.backgroundColor = UIColor.red
+            self.view.addSubview(midView)
+        
+            let pop = newVC.popoverPresentationController
+            pop?.sourceView = midView
+            show(newVC, sender: midView)
+ */
+    }
+    
     
     func ableToPlay()->Bool {
         if ((selectedDifficulty != "") && (selectedGame != "")) {
@@ -112,6 +176,7 @@ class ViewController: UIViewController {
             if let dvc = segue.destination as? memoryGameViewController {
                 dvc.game = selectedGame
                 dvc.difficulty = selectedDifficulty
+                dvc.highScores = self.highScores
                 print("entered")
             }
  
@@ -119,11 +184,13 @@ class ViewController: UIViewController {
         else if segue.identifier == "sort" {
             if let dvc = segue.destination as? sortGameViewController {
                 dvc.difficulty = selectedDifficulty
+                dvc.highScores = self.highScores
             }
         }
         else if segue.identifier == "balloon" {
             if let dvc = segue.destination as? balloonGameViewController {
                  dvc.difficulty = selectedDifficulty
+                 dvc.highScores = self.highScores
                  print("entered")
                 
             }
